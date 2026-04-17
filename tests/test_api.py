@@ -4,7 +4,7 @@ from src.app import activities
 def test_root_redirects_to_index(client):
     # Arrange: client fixture
     # Act
-    resp = client.get("/", allow_redirects=False)
+    resp = client.get("/", follow_redirects=False)
 
     # Assert
     assert resp.status_code in (302, 307)
